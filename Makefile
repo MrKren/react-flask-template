@@ -6,3 +6,6 @@ lint-be:
 
 start-be:
 	cd src/ && poetry run flask --app app run --debug
+
+build-be:
+	cd src/ && poetry export -f requirements.txt --output requirements.txt
