@@ -12,3 +12,22 @@ The app is hosted using [Render](https://render.com/).
 
 ## Development
 
+### Backend
+
+Make sure you have [Python](https://www.python.org/) and [Poetry](https://python-poetry.org/) installed.
+
+Then in `src/` run:
+
+`poetry install`
+
+To start the backend server:
+
+`make start-be`
+
+To lint:
+
+`make lint-be`
+
+To fix lint errors:
+
+`make format-be`
