@@ -1,0 +1,13 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "description": "A simple web app for adding the title of a reddit post to the post's image",
+  "main": "index.tsx",
+  "repository": "https://github.com/MrKren/Title2Image",
+  "author": "Kieran Dominy",
+  "license": "",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
