@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        //Type checking
+        "strict": true,
+        "exactOptionalPropertyTypes": true,
+        //Module
+        "moduleResolution": "node",
+        //Emit
+        "outDir": "dist",
+        //Interop Constraints
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        //Language and Environment
+        "target": "ES6",
+        "jsx": "react"
+    },
+    "include": ["src/**/*"]
+}
