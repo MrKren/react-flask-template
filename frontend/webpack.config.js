@@ -10,6 +10,15 @@ module.exports = {
                 use: 'babel-loader',
                 exclude: /node-modules/,
             },
+            {
+                test: /\.scss$/i,
+                use: [
+
+                    "style-loader", // Creates `style` tags from JS strings
+                    "css-loader", // Translates CSS into CommonJS
+                    "sass-loader", // Compiles Sass to CSS
+                ],
+            },
         ]
     },
     resolve: {
@@ -18,6 +27,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "src", "index.html"),
-        })
+        }),
     ],
 };

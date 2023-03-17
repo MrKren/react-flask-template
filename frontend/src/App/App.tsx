@@ -1,7 +1,9 @@
 import React from "react";
 
+import './App.scss';
+
 const App = () => (
-    <div>
+    <div className="app">
         <p>Hello World</p>
     </div>
 );
