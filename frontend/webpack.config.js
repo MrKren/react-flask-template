@@ -18,6 +18,10 @@ module.exports = {
           "sass-loader", // Compiles Sass to CSS
         ],
       },
+      {
+        test: /\.(svg|png|jpe?g|gif)?$/,
+        loader: "file-loader",
+      },
     ],
   },
   resolve: {

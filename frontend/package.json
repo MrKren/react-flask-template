@@ -11,8 +11,8 @@
     "build": "webpack --config webpack.dev.js",
     "watch": "webpack --watch --config webpack.dev.js",
     "start": "webpack serve --open --config webpack.dev.js",
-    "lint": "eslint src/* && stylelint '**/*.scss' && prettier --check .",
-    "fmt": "eslint src/* --fix && stylelint '**/*.scss' --fix && prettier --write ."
+    "lint": "eslint . --ext .js,.ts,.tsx && stylelint '**/*.scss' && prettier --check .",
+    "fmt": "eslint . --ext .js,.ts,.tsx --fix && stylelint '**/*.scss' --fix && prettier --write ."
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -36,6 +36,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.8.4",
     "sass": "^1.59.2",

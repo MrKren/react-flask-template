@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 
 app = Flask(__name__)
 
@@ -7,6 +7,7 @@ app = Flask(__name__)
 def home():
     return app.send_static_file("dist/index.html")
 
-@app.route("/bundle.js")
-def js_bundle():
-    return app.send_static_file("dist/bundle.js")
+
+@app.route("/<path:path>")
+def send_statics(path):
+    return send_from_directory("static/dist", path)
