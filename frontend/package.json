@@ -9,9 +9,10 @@
   "license": "",
   "scripts": {
     "build": "webpack --config webpack.dev.js",
-    "build-prod": "webpack --config webpack.prod.js",
     "watch": "webpack --watch --config webpack.dev.js",
-    "start": "webpack serve --open --config webpack.dev.js"
+    "start": "webpack serve --open --config webpack.dev.js",
+    "lint": "eslint src/* && stylelint '**/*.scss' && prettier --check .",
+    "fmt": "eslint src/* --fix && stylelint '**/*.scss' --fix && prettier --write ."
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -25,13 +26,24 @@
     "@babel/preset-typescript": "^7.21.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.32.2",
     "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.8.4",
     "sass": "^1.59.2",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
-    "typescript": "^4.9.5",
+    "stylelint": "^15.3.0",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "typescript": "*",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
