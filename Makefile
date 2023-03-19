@@ -24,6 +24,10 @@ lint-be:
 start-be:
 	cd src/ && poetry run flask --app app run --debug
 
+.PHONY: test-fe # Runs frontend unit tests
+test-fe:
+	cd frontend/ && yarn test
+
 .PHONY: format-fe # Formats frontend files
 format-fe:
 	cd frontend/ && yarn fmt
