@@ -6,6 +6,10 @@ help:
 build:
 	docker build . -t title2image
 
+.PHONY: start # Starts the production docker container
+start:
+	docker run --rm -p 8000:8000 --entrypoint gunicorn title2image -b 0.0.0.0:8000 app:app
+
 .PHONY: format # Formats all files
 format: format-be format-fe
 
