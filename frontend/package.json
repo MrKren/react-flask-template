@@ -1,10 +1,10 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "description": "A simple web app for adding the title of a reddit post to the post's image",
+  "description": "A react typescript simple web app.",
   "main": "index.tsx",
   "private": true,
-  "repository": "https://github.com/MrKren/Title2Image",
+  "repository": "https://github.com/MrKren/react-flask-template",
   "author": "Kieran Dominy",
   "license": "",
   "scripts": {
