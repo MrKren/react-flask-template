@@ -12,6 +12,10 @@ ENV PATH="/root/.local/bin:$PATH"
 RUN poetry config virtualenvs.create false
 COPY ./src /title2image
 WORKDIR /title2image
+RUN poetry install --without dev
+
+FROM backend AS development
+
 RUN poetry install
 CMD ["poetry", "run", "flask", "--app", "app", "run", "--debug"]
 
