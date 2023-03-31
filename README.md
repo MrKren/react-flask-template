@@ -16,6 +16,8 @@ The app can be easily hosted in a [Docker](https://docs.docker.com/) container u
 
 Run `make help` or just `make` to see a list of all make commands with short descriptions.
 
+If you have [Docker](https://docs.docker.com/) installed you can skip the below steps and just use `make build` and then `make up` to start the app in dev mode (you may want to do the following steps anyway for editor type hints, autocompletions, etc).
+
 ### Backend
 
 Make sure you have [Python](https://www.python.org/) and [Poetry](https://python-poetry.org/) installed.

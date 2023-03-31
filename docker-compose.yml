@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: .
+      target: backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/title2image
+    working_dir: /title2image/src
+    tty: true
+
+  frontend:
+    image: node:16-bullseye
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/title2image
+    working_dir: /title2image/frontend
+    command: yarn start

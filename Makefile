@@ -2,13 +2,13 @@
 help:
 	@grep '^.PHONY: .* #' Makefile | sed 's/\.PHONY: \(.*\) # \(.*\)/\1	\2/' | expand -t20
 
-.PHONY: build # Builds the docker image used for production
+.PHONY: build # Builds the docker image used for development
 build:
-	docker build . -t react-flask-app
+	docker compose build
 
-.PHONY: start # Starts the production docker container
-start:
-	docker run --rm -p 8000:8000 --entrypoint gunicorn react-flask-app -b 0.0.0.0:8000 app:app
+.PHONY: up # Starts the docker-compose development services
+up:
+	docker compose up
 
 .PHONY: format # Formats all files
 format: format-be format-fe
@@ -43,3 +43,11 @@ lint-fe:
 .PHONY: start-fe # Starts frontend dev server
 start-fe:
 	cd frontend/ && yarn start
+
+.PHONY: build-prod # Builds the docker image used for production
+build-prod:
+	docker build . -t title2image
+
+.PHONY: start-prod # Starts the production docker container
+start-prod:
+	docker run --rm -p 8000:8000 --entrypoint gunicorn title2image -b 0.0.0.0:8000 app:app
