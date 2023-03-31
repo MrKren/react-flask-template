@@ -1,0 +1,58 @@
+name: merge-request-flow
+run-name: Test and Lint Flow 🚀
+on: 
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+jobs:
+  Backend-Lint:
+    defaults:
+      run:
+        working-directory: ./src
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Poetry
+        run: pip install -U poetry
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.7'
+          cache: 'poetry' # caching pip dependencies
+      - run: poetry install
+      - run: poetry run flake8
+      - run: poetry run isort . -c
+  Frontend-Lint:
+    strategy:
+      matrix:
+        node-version: [18.x]
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install -g yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint
+      - run: npm uninstall -g yarn
+  Frontend-Unit-Tests:
+    strategy:
+      matrix:
+        node-version: [18.x]
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install -g yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn test
+      - run: npm uninstall -g yarn
