@@ -13,7 +13,7 @@ module.exports = merge(common, {
   devServer: {
     static: path.resolve(__dirname, "dist"),
     proxy: {
-      "/": "http://localhost:5000",
+      "/": "http://backend:5000",
     },
     port: 3000,
   },
