@@ -7,7 +7,17 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "../src/static/dist"),
+    path: path.resolve(__dirname, "dist"),
     clean: true,
+  },
+  devServer: {
+    static: path.resolve(__dirname, "dist"),
+    proxy: {
+      "/": "http://backend:5000",
+    },
+    port: 3000,
+  },
+  optimization: {
+    runtimeChunk: "single",
   },
 });

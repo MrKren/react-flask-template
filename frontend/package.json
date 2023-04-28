@@ -10,7 +10,7 @@
   "scripts": {
     "build": "webpack --config webpack.dev.js",
     "watch": "webpack --watch --config webpack.dev.js",
-    "start": "webpack serve --open --config webpack.dev.js",
+    "start": "webpack serve --open --config webpack.proxy.js",
     "lint": "eslint . --ext .js,.ts,.tsx && stylelint '**/*.scss' && prettier --check .",
     "fmt": "eslint . --ext .js,.ts,.tsx --fix && stylelint '**/*.scss' --fix && prettier --write .",
     "test": "jest"

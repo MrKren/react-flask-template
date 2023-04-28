@@ -19,7 +19,7 @@ services:
     volumes:
       - ./:/title2image
     working_dir: /title2image/frontend
-    command: yarn start
+    command: yarn watch
 
   runner:
     image: myoung34/github-runner:latest
