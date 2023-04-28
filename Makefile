@@ -46,8 +46,8 @@ start-fe:
 
 .PHONY: build-prod # Builds the docker image used for production
 build-prod:
-	docker build . -t title2image
+	docker build . -t web-app
 
 .PHONY: start-prod # Starts the production docker container
 start-prod:
-	docker run --rm -p 8000:8000 --entrypoint gunicorn title2image -b 0.0.0.0:8000 app:app
+	docker run --rm -p 8000:8000 --entrypoint gunicorn web-app -b 0.0.0.0:8000 app:app
