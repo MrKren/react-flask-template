@@ -24,10 +24,6 @@ format-be:
 lint-be:
 	cd src/ && poetry run flake8 && poetry run isort . -c
 
-.PHONY: start-be # Starts the dev flask server
-start-be:
-	cd src/ && poetry run flask --app app run --debug
-
 .PHONY: test-fe # Runs frontend unit tests
 test-fe:
 	cd frontend/ && yarn test
@@ -39,10 +35,6 @@ format-fe:
 .PHONY: lint-fe # Lints frontend files
 lint-fe:
 	cd frontend/ && yarn lint
-
-.PHONY: start-fe # Starts frontend dev server
-start-fe:
-	cd frontend/ && yarn start
 
 .PHONY: build-prod # Builds the docker image used for production
 build-prod:
