@@ -17,7 +17,7 @@ RUN poetry install --without dev
 FROM backend AS development
 
 RUN poetry install
-CMD ["poetry", "run", "flask", "--app", "app", "run", "--debug", "--host", "0.0.0.0"]
+CMD ["poetry", "run", "python", "dev_server.py"]
 
 FROM backend AS production
 
