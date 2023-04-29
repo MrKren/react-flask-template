@@ -25,13 +25,10 @@ services:
     image: myoung34/github-runner:latest
     environment:
       REPO_URL: https://github.com/MrKren/react-flask-template
-      RUNNER_NAME: $RANDOM
+      RUNNER_NAME: Runner
       ACCESS_TOKEN: $ACCESS_TOKEN
       RUNNER_WORKDIR: /tmp/runner/work
       RUNNER_SCOPE: 'repo'
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - '/tmp/runner:/tmp/runner'
-    deploy:
-      mode: replicated
-      replicas: 3
