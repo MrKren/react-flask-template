@@ -25,7 +25,7 @@ services:
     image: myoung34/github-runner:latest
     environment:
       REPO_URL: https://github.com/MrKren/react-flask-template
-      RUNNER_NAME: Runner
+      RUNNER_NAME: $RANDOM
       ACCESS_TOKEN: $ACCESS_TOKEN
       RUNNER_WORKDIR: /tmp/runner/work
       RUNNER_SCOPE: 'repo'
